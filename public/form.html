@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventori Buah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            background-color: #fff; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 36px; 
+            font-weight: bold; 
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .delete-button {
+            background-color: #ff3860; 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .delete-button:hover {
+            background-color: #ff2b4c; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ADMIN INVENTORI</h1>
+        <form id="fruitForm" action="../src/php/process.php" method="POST">
+            <div class="field">
+                <label class="label" for="fruitName">Nama Buah:</label>
+                <div class="control">
+                    <input class="input" type="text" name="fruitName" id="fruitName" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="quantity">Jumlah:</label>
+                <div class="control">
+                    <input class="input" type="number" name="quantity" id="quantity" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="isAvailable">Tersedia:</label>
+                <div class="control">
+                    <input type="checkbox" name="isAvailable" id="isAvailable">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Jenis Buah:</label>
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" name="fruitType" value="Tropis" required> Tropis
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="fruitType" value="Non-Tropis"> Non-Tropis
+                    </label>
+                </div>
+            </div>
+
+            <div class="control">
+                <button class="button is-primary" type="submit">Kirim</button>
+            </div>
+        </form>
+
+        <div class="popup" id="popup"></div> <!-- Popup untuk menampilkan pesan -->
+
+        <h1>DATA INVENTORI</h1>
+        <input class="input" type="text" id="searchInput" placeholder="Cari buah..." onkeyup="searchInventory()">
+        <table id="inventoryTable">
+            <tr>
+                <th>Nama Buah</th>
+                <th>Jumlah</th>
+                <th>Tersedia</th>
+                <th>Jenis Buah</th>
+                <th>Aksi</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

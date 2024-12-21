@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventori Buah</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<style>
+    .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/img/buah1.jpg');
+    background-size: cover; /* Mengatur ukuran gambar agar menutupi seluruh area */
+    background-position: center; /* Mengatur posisi gambar di tengah */
+    opacity: 0.5; /* Mengatur opacity menjadi 50% */
+    z-index: -1; /* Menempatkan di belakang konten lainnya */
+}
+</style>
+<body>
+    <div class="background"></div> <!-- Elemen untuk gambar latar belakang -->
+    <div class="container">
+        <header>
+            <h1>DASHBOARS INVENTORI BUAH</h1>
+            <a href="form.html" class="btn">Administrator</a>
+        </header>
+        <input type="text" id="searchBar" placeholder="Cari buah..." onkeyup="searchTable()">
+        <div class="table-container">
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th>Nama Buah</th>
+                        <th>Jumlah</th>
+                        <th>Tersedia</th>
+                        <th>Jenis Buah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan dimuat di sini -->
+                </tbody>
+            </table>
+        </div>
+        <div class="popup" id="popup"></div> <!-- Popup untuk menampilkan pesan -->
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
