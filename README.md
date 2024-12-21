@@ -63,4 +63,4 @@ Proyek ini terdiri dari beberapa bagian yang saling berkaitan, yaitu:
 
 
 ## Kontak
-Jika ada pertanyaan atau masukan, silakan hubungi saya di [rendy.121140003@student.itera.ac.id].
+Jika ada pertanyaan atau masukan, silakan hubungi saya di rendy.121140003@student.itera.ac.id.
