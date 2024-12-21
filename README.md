@@ -1,6 +1,7 @@
-# Nama  : Rendy Apriansyah
-# NIM   : 121140003
-# Matkul: Pemweb
+## Biodata Diri
+### Nama  : Rendy Apriansyah
+### NIM   : 121140003
+### Matkul: Pemweb
 
 
 ## Deskripsi Proyek
